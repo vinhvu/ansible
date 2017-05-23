@@ -1,0 +1,2 @@
+[httpd]
+10.0.0.129 ansible_ssh_user=ec2-user

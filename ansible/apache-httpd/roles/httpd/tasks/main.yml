@@ -1,0 +1,11 @@
+---
+- name: Installing httpd version 2.4.6 of Apache
+#  yum: pkg=httpd state="2.4.6"
+  yum: pkg=httpd-2.4.6 state=latest
+- name: Copying the demo file
+  template: src=/var/lib/jenkins/playbooks/apache-httpd/index.html dest=/var/www/html
+            owner=apache group=apache mode=0644
+- name: (Enable it on System Boot)
+  service: name=httpd enabled=yes
+  notify:
+    - start apache

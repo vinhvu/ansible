@@ -1,0 +1,18 @@
+---
+- name: "Download Install Script (Redhat)."
+  get_url:
+    url: https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
+    dest: /tmp/awslogs-agent-setup.py
+    owner: root
+    group: root
+    mode: 550
+- name: "Configure AWS CloudWatch Logs Agent"
+  template:
+    src: awslogs.conf.j2
+    dest: /tmp/awslogs.conf
+    owner: root
+    group: root
+    mode: 550
+- name: "Install AWS CloudWatch Logs Agent (Redhat)."
+  shell: python /tmp/awslogs-agent-setup.py -n -r ap-northeast-1 -c /tmp/awslogs.conf
+

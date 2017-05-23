@@ -1,0 +1,12 @@
+---
+
+- name: "Download Install Script (Redhat)."
+  get_url:
+    url: https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
+    dest: /tmp/awslogs-agent-setup.py
+    mode: 550
+- name: "Create /etc/awslogs (Redhat)."
+  file:
+    path: /etc/awslogs
+    state: directory
+    mode: 755
