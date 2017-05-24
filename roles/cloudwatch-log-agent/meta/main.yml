@@ -1,18 +1,15 @@
 ---
 galaxy_info:
-  author: David Harris
+  author: vinhvdq1
   description: Install and configure AWS CloudWatch Logs Agent
-  company: Balihoo
-  license: license (GPLv3)
+  company: fpt software
+  license: license 
   min_ansible_version: 1.2
   platforms:
-  - name: EL
-    versions:
-    - 6
   - name: Amazon
     versions:
     - all
-  - name: Ubuntu
+  - name: Readhat 7.3
     versions:
     - trusty
   
